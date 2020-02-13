@@ -1,6 +1,5 @@
 package ru.yakimov.doctor;
 
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import ru.yakimov.map.Map;
 
@@ -10,9 +9,6 @@ import ru.yakimov.map.Map;
  * E-mail: yakimovvn@bk.ru
  */
 
-
-@Component
-@Lazy
 public class DoctorImpl implements Doctor {
 
     private Map map;
