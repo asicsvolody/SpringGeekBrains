@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="patient" class="ru.yakimov.patient.PatientImpl" lazy-init="true">
+        <constructor-arg value="Temperature"/>
+    </bean>
+
+    <bean id="map" class="ru.yakimov.map.MapImpl" lazy-init="true">
+        <constructor-arg ref="complaints"/>
+    </bean>
+
+    <util:list id="complaints" list-class="java.util.ArrayList">
+        <value>A sore throat</value>
+        <value>Headache</value>
+    </util:list>
+
+    <bean id="doctor" class="ru.yakimov.doctor.DoctorImpl" lazy-init="true">
+        <constructor-arg ref="map"/>
+    </bean>
+
+    <bean id="reception" class="ru.yakimov.reception.ReceptionImpl" lazy-init="true">
+        <constructor-arg ref="doctor"/>
+    </bean>
+
+</beans>
