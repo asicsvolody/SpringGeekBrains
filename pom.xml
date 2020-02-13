@@ -25,6 +25,7 @@
     <modules>
         <module>HospitalXml</module>
         <module>HospitalAnnotations</module>
+        <module>LessonWork</module>
     </modules>
 
     <dependencies>

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="HospitalXml" />
         <module name="HospitalAnnotations" />
+        <module name="LessonWork" />
       </profile>
     </annotationProcessing>
   </component>
