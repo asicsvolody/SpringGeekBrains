@@ -10,11 +10,11 @@ public class Client {
 //        Camera camera = client.getCamera();
 //        camera.doPhotograph();
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
 //        ICamera camera1 = context.getBean("camera", ICamera.class);
 //        camera1.doPhotograph();
 
-     //   ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ICamera camera1 = context.getBean("camera", ICamera.class);
         camera1.doPhotograph();
 
