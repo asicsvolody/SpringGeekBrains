@@ -3,6 +3,7 @@ package com.geekbrains.controllers;
 import com.geekbrains.entites.Product;
 import com.geekbrains.service.ProductService;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * E-mail: yakimovvn@bk.ru
  */
 
-@Component
+@Controller
 @RequestMapping("/products")
 public class ProductsController {
 

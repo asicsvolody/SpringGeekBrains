@@ -15,9 +15,9 @@ public class HomeController {
 //        return "index";
 //    }
 
-    @RequestMapping(value = "/start/{name}", method = RequestMethod.GET)
-    public String hello(Model uiModel, @PathVariable(value = "name") String name) {
-        uiModel.addAttribute("name", name);
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String hello(/*Model uiModel, @PathVariable(value = "name") String name*/) {
+//        uiModel.addAttribute("name", name);
         return "index";
     }
 }

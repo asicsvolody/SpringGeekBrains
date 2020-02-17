@@ -6,6 +6,8 @@
 <body>
 <h1>Product Form Result</h1>
 <br>
+<a href="/products">products</a>
+<br>
 id: ${product.id}
 <br>
 title: ${product.title}
