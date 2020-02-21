@@ -9,5 +9,8 @@
         <module name="SpringGeekBrains" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="LessonWork" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
