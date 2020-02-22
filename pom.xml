@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Lesson</module>
-        <module>HomeWork</module>
+        <module>LessonWork</module>
+        <module>HomeTask</module>
     </modules>
 
 
