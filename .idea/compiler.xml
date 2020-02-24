@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringGeekBrains" />
+        <module name="HomeWork" />
+        <module name="HomeTask" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="LessonWork" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
