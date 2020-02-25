@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: development
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/GEEKBRAINT_SPRING?serverTimezone=UTC&pinGlobalTxToPhysicalConnection=true
+    username: root
+    password: bhbyf.hnftdf
+    xa:
+      data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    enabled: true
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: error
+    org.hibernate: trace
+
+server:
+  port: 8189
+
+
+
