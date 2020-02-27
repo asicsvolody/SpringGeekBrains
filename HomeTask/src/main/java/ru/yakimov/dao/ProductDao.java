@@ -14,7 +14,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import ru.yakimov.entity.Product;
 
 
-public interface ProductDao extends JpaRepository<Product, Long> {
+public interface ProductDao extends PagingAndSortingRepository<Product, Long> {
 
     @Query(value = "FROM Product WHERE price = (SELECT min(price) from Product)")
     Product min();

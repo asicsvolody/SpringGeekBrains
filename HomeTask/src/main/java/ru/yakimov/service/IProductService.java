@@ -6,6 +6,7 @@
 
 package ru.yakimov.service;
 
+import org.springframework.data.domain.Page;
 import ru.yakimov.entity.Product;
 
 import java.util.List;
@@ -15,5 +16,5 @@ public interface IProductService {
     Product getMaxPriceProduct();
     Product getMinPriceProduct();
     List<Product> getAllByPriceBetween(int min, int max);
-    List<Product> getAll();
+    Page<Product> getAll(int pageNumber, int count);
 }

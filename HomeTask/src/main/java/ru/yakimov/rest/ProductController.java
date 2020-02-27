@@ -1,11 +1,9 @@
 package ru.yakimov.rest;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import ru.yakimov.entity.Product;
 import ru.yakimov.service.IProductService;
 
@@ -27,12 +25,18 @@ public class ProductController {
     }
 
     @GetMapping
-    public String list(Model uiModel){
-        uiModel.addAttribute("products", productService.getAll());
+    public String list(@RequestParam(defaultValue = "0") int pageNumber,  Model uiModel){
+        Page<Product> page = productService.getAll(pageNumber,10);
+        uiModel.addAttribute("page", page);
         uiModel.addAttribute("min", productService.getMinPriceProduct().getPrice());
         uiModel.addAttribute("max", productService.getMaxPriceProduct().getPrice());
 
         return "products";
+    }
+
+    @GetMapping(value = "/{pageNumber}" )
+    public String listPage(@PathVariable int pageNumber){
+        return "redirect:/products?pageNumber=" + pageNumber;
     }
 
     @GetMapping(value = "/min")

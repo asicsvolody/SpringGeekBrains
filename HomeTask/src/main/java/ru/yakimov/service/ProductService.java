@@ -1,5 +1,7 @@
 package ru.yakimov.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import ru.yakimov.dao.ProductDao;
 import ru.yakimov.entity.Product;
@@ -41,8 +43,7 @@ public class ProductService implements IProductService {
                 );
     }
 
-    @Override
-    public List<Product> getAll() {
-        return dao.findAll();
+    public Page<Product> getAll(int pageNumber, int count) {
+        return dao.findAll(PageRequest.of(pageNumber, count));
     }
 }
