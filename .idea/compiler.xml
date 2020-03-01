@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="HomeWork" />
         <module name="HomeTask" />
+        <module name="HomeWOrk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Lesson" target="1.7" />
       <module name="LessonWork" target="1.8" />
     </bytecodeTargetLevel>
   </component>
