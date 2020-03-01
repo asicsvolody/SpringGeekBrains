@@ -23,9 +23,8 @@ public class Book {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "DATE_PUBLICATION", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date datePublication;
+    @Column(name = "YEAR")
+    private int year;
 
     public long getId() {
         return id;
@@ -51,11 +50,11 @@ public class Book {
         this.description = description;
     }
 
-    public Date getDatePublication() {
-        return datePublication;
+    public int getYear() {
+        return year;
     }
 
-    public void setDatePublication(Date datePublication) {
-        this.datePublication = datePublication;
+    public void setYear(int year) {
+        this.year = year;
     }
 }

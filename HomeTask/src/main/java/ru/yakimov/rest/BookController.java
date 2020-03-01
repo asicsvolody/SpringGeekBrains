@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import ru.yakimov.entities.Book;
 import ru.yakimov.services.IBookService;
+
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @RequestMapping
+    @GetMapping
     public String list(Model uiModel){
          List<Book> books = bookService.findAll();
          uiModel.addAttribute("books", books);
@@ -41,10 +43,10 @@ public class BookController {
         return "update";
     }
 
-    @PostMapping
-    public String save(@Valid Book book){
+    @RequestMapping(path="/add", method= RequestMethod.POST)
+    public String save(Book book){
         bookService.save(book);
-        return "redirect:/books/";
+        return "redirect:/books";
 
     }
 }

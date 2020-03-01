@@ -1,5 +1,7 @@
 package ru.yakimov.services;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import ru.yakimov.entities.Book;
 import ru.yakimov.repositories.BookDao;
 
@@ -11,6 +13,7 @@ import java.util.List;
  * E-mail: yakimovvn@bk.ru
  */
 
+@Service
 public class BookService implements IBookService {
 
     private BookDao dao;
